@@ -1,10 +1,16 @@
 class Customer
-	attr_accessor :date, :doctor, :patient
-
-	def initialize(date, doctor)
-		@date = date
-		@doctor = doctor
-		doctor.add_appointment(self)
-	end
-
+  attr_accessor :name, :age
+ 
+  @@all = []
+ 
+  def initialize(name, age)
+    @name = name
+    @age = age
+    @@all << self
+  end
+ 
+  def self.all
+    @@all
+  end
+ 
 end
